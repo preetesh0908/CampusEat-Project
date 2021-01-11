@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>My Orders | IU CampusEAT </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="CapstoneHome.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>IU CampusEAT</h1>
+  <h3>Food on the Go!</h3>
+</div>
+<div class="navbar">
+  <a href="CapstoneHome.html">Home</a>
+  <a href="CapstoneOrders.html">My Orders</a>
+  <a href="CapstoneFAQs.html">FAQs</a>
+  <a href="CapstoneLogin.html" class="right">My Profile</a>
+</div>
+<div class="row">
+  <div class="side">
+	<h2 align = "center"> Past Orders </h2>
+	<table style="width:100%">
+		<tr>
+			<th> Order #16 </th>
+		</tr>
+		<tr>
+			<th> </th>
+		</tr>
+		<tr>
+			<th> Order #15 </th>
+		</tr>
+		<tr>
+			<th>  </th>
+		</tr>
+		<tr>
+			<th> Order #14 </th>
+		</tr>
+		<tr>
+			<th> </th>
+		</tr>
+		<tr>
+			<th> Order #13 </th>
+		</tr>
+		<tr>
+			<th>  </th>
+		</tr>
+	</table>
+  </div>
+  <div class="main">
+	<h2 align = "center"> Current Order </h2>
+	<h4> Order #17 </h4>
+	<?php
+
+		
+		$conn = new mysqli('db.sice.indiana.edu', 'i494f19_vkar', 'i494f19_vkar','i494f19_vkar');
+    //end of dbcon
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+
+    $sql = "SELECT * FROM dining";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+
+        echo "<select name='name'>";
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+          echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
+        }
+        echo "</select>";
+    } 
+    $conn->close();
+    ?>
+	<h3> Estimated Wait Time: 15 Minutes </h3>
+  </div>
+</div>
+<div class="footer">
+  <h2>Questions/Concerns?</h2>
+  <h4> Call us at 1-800-FOOD or email us at campusEat@indiana.edu </h4>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+
+<html>
+<head>
+<title>Home | IU CampusEAT </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="CapstoneHome.css">
+<style>
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>IU CampusEAT</h1>
+  <h3>Food on the Go!</h3>
+</div>
+<div class="navbar">
+  <a href="CapstoneHome.html">Home</a>
+  <a href="CapstoneOrders.html">My Orders</a>
+  <a href="CapstoneFAQs.html">FAQs</a>
+  <a href="CapstoneLogin.html" class="right">My Profile</a>
+</div>
+<div class="row">
+  <div class="side">
+	<h2 align = "center"> Locations Currently Open </h2>
+	<?php
+		$con = mysqli_connect("db.sice.indiana.edu","i494f19_team12","my+sql=i494f19_team12","i494f19_team12");
+		// Check connection
+		if(!$con){
+			die("Connection failed:" . mysqli_connect_error());
+		}
+		$result = mysqli_query($con,"SELECT name FROM Location ORDER BY locationID");
+			while($row = mysqli_fetch_assoc($result)){
+				unset($id);
+				$name = $row['name'];
+
+			echo .$name.;
+		}
+	?>
+	<table style="width:100%">
+		<tr>
+			<th> Gresham Hall </th>
+		</tr>
+		<tr>
+			<th> </th>
+		</tr>
+		<tr>
+			<th> Wright Food Court </th>
+		</tr>
+		<tr>
+			<th>  </th>
+		</tr>
+		<tr>
+			<th> Union Street Cafe </th>
+		</tr>
+		<tr>
+			<th> </th>
+		</tr>
+		<tr>
+			<th> Kelley Campus Cafe </th>
+		</tr>
+		<tr>
+			<th>  </th>
+		</tr>
+	</table>
+  </div>
+  <div class="main">
+  <!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+		// Initialize and add the map
+		function initMap() {
+		  // The location of Uluru
+		  var bloom = {lat: 39.1733, lng: -86.5264};
+		  // The map, centered at Uluru
+		  var map = new google.maps.Map(
+			  document.getElementById('map'), {zoom: 15, center: bloom});
+		  // The marker, positioned at Uluru
+		  var marker = new google.maps.Marker({position: bloom, map: map});
+		}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script 
+	async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7yeVbBMQhQRcL_nQrLN2rWL5s0dL4GFo&callback=initMap">
+    </script>
+  </body>
+</html>
+	<h2 align = "center"> Map of Locations </h2>
+	<img align = "right" src="IUmap.png" alt="IU Campus Map" width = "800" height = "500">
+  </div>
+</div>
+<div class="footer">
+  <h2>Questions/Concerns?</h2>
+  <h4> Call us at 1-800-FOOD or email us at campusEat@indiana.edu </h4>
+</div>
+
+</body>
+</html>
+<html>
+<head>
+<title>Home | IU CampusEAT </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="CapstoneHome.css">
+<style>
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>IU CampusEAT</h1>
+  <h3>Food on the Go!</h3>
+</div>
+<div class="navbar">
+  <a href="CapstoneHome.html">Home</a>
+  <a href="CapstoneOrders.html">My Orders</a>
+  <a href="CapstoneFAQs.html">FAQs</a>
+  <a href="CapstoneLogin.html" class="right">My Profile</a>
+</div>
+<div class="row">
+  <div class="side">
+	<h2 align = "center"> Locations Currently Open </h2>
+	<?php
+		$con = mysqli_connect("db.sice.indiana.edu","i494f19_team12","my+sql=i494f19_team12","i494f19_team12");
+		// Check connection
+		if(!$con){
+			die("Connection failed:" . mysqli_connect_error());
+		}
+		$result = mysqli_query($con,"SELECT name FROM Location ORDER BY locationID");
+			while($row = mysqli_fetch_assoc($result)){
+				unset($id);
+				$name = $row['name'];
+
+			echo .$name.;
+		}
+	?>
+	<table style="width:100%">
+		<tr>
+			<th> Gresham Hall </th>
+		</tr>
+		<tr>
+			<th> </th>
+		</tr>
+		<tr>
+			<th> Wright Food Court </th>
+		</tr>
+		<tr>
+			<th>  </th>
+		</tr>
+		<tr>
+			<th> Union Street Cafe </th>
+		</tr>
+		<tr>
+			<th> </th>
+		</tr>
+		<tr>
+			<th> Kelley Campus Cafe </th>
+		</tr>
+		<tr>
+			<th>  </th>
+		</tr>
+	</table>
+  </div>
+  <div class="main">
+  <!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+		// Initialize and add the map
+		function initMap() {
+		  // The location of Uluru
+		  var bloom = {lat: 39.1733, lng: -86.5264};
+		  // The map, centered at Uluru
+		  var map = new google.maps.Map(
+			  document.getElementById('map'), {zoom: 15, center: bloom});
+		  // The marker, positioned at Uluru
+		  var marker = new google.maps.Marker({position: bloom, map: map});
+		}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script 
+	async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7yeVbBMQhQRcL_nQrLN2rWL5s0dL4GFo&callback=initMap">
+    </script>
+  </body>
+</html>
+	<h2 align = "center"> Map of Locations </h2>
+	<img align = "right" src="IUmap.png" alt="IU Campus Map" width = "800" height = "500">
+  </div>
+</div>
+<div class="footer">
+  <h2>Questions/Concerns?</h2>
+  <h4> Call us at 1-800-FOOD or email us at campusEat@indiana.edu </h4>
+</div>
+
+</body>
+</html>
